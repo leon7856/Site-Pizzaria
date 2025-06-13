@@ -1,0 +1,23 @@
+.historiaSection {
+  background-color: #c2462a;
+  padding: 60px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 1000px;
+  font-family: sans-serif;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}

@@ -1,0 +1,224 @@
+.loginPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  background-color: #121212; 
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px; 
+  box-sizing: border-box; 
+}
+
+.loginContainer {
+  display: flex;
+  width: 100%; 
+  max-width: 1100px;
+  min-height: 700px;
+  background-color: #1e1e1e; 
+  border-radius: 20px;
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+}
+
+.imageSection {
+  flex: 1; 
+  background-image: url('../assets/PizzaLogin.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.formSection {
+  flex: 1; 
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  color: white;
+  box-sizing: border-box; 
+}
+
+.logoContainer {
+  display: flex; 
+  justify-content: flex-end; 
+  margin-bottom: 40px; 
+  width: 100%; 
+}
+
+.logo {
+  width: 140px;
+}
+
+.welcomeText {
+  font-size: 2.2rem; 
+  margin: 0;
+  color: #e74c3c; 
+  font-weight: 700; 
+}
+
+.subtext {
+  font-size: 1.1rem; 
+  color: #bbb; 
+  margin-top: 10px; 
+  margin-bottom: 40px; 
+}
+
+label {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #ccc; 
+}
+
+.inputField { 
+  width: 100%;
+  padding: 14px 18px; 
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #2a2a2a; 
+  color: white;
+  font-size: 1rem;
+  outline: none; 
+  transition: border-color 0.3s ease; 
+}
+
+.inputField:focus {
+  border-color: #d35400; 
+}
+
+.inputField::placeholder {
+  color: #888;
+}
+
+.forgotPassword {
+  font-size: 0.9rem; 
+  margin-top: 10px;
+  color: #4d8af0;
+  text-align: right;
+  display: block;
+  text-decoration: none; 
+  transition: color 0.3s ease;
+}
+
+.forgotPassword:hover {
+  color: #6a9cff;
+}
+
+.loginBtn {
+  background-color: #d35400; 
+  color: white;
+  padding: 14px; 
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600; 
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 30px;
+}
+
+.loginBtn:hover {
+  background-color: #b84300;
+}
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #999;
+  margin: 30px 0; 
+}
+
+.orDivider::before,
+.orDivider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #444;
+  margin: 0 15px; 
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; 
+  background-color: #f0f0f0; 
+  color: #333; 
+  padding: 14px; 
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-weight: 500;
+  font-size: 1rem; 
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.socialBtn:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+.socialBtn img {
+  width: 22px; 
+  height: 22px;
+}
+
+.createAccount {
+  font-size: 0.95rem; 
+  margin-top: 20px; 
+  color: #bbb;
+  text-align: center;
+}
+
+.createAccountLink { 
+  color: #4d8af0;
+  text-decoration: none;
+  font-weight: 600; 
+  margin-left: 8px; 
+  transition: color 0.3s ease;
+}
+
+.createAccountLink:hover {
+  color: #6a9cff;
+}
+
+@media (max-width: 900px) {
+  .loginContainer {
+    flex-direction: column; 
+    max-width: 500px;
+    min-height: auto; 
+  }
+
+  .imageSection {
+    width: 100%;
+    height: 300px; 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+  }
+
+  .formSection {
+    width: 100%;
+    padding: 40px 30px; 
+  }
+
+  .logoContainer {
+    justify-content: center;
+  }
+
+  .welcomeText {
+    text-align: center;
+  }
+
+  .subtext {
+    text-align: center;
+  }
+
+  .forgotPassword {
+    text-align: center;
+  }
+}
