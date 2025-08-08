@@ -1,0 +1,28 @@
+/* Dashboard.module.css */
+
+.dashboardContainer {
+  display: flex;
+  height: 100vh;
+  background-color: #121212; /* Fundo geral */
+  color: white;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem; /* Espaçamento interno */
+  overflow-y: auto;
+}
+
+.mainContent h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem; /* Margem entre o título e o card */
+}
+
+/* ESTILO CRÍTICO PARA O CARD EXTERNO */
+.pedidosCard {
+  background-color: #0d0d0d; /* Um preto um pouco mais intenso para o card */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 2rem; /* Espaçamento interno do card */
+  /* Sombra muito sutil, quase imperceptível, apenas para dar profundidade */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Sombra mais difusa e menos opaca */
+}

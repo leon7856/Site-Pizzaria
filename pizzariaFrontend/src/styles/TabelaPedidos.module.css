@@ -1,0 +1,71 @@
+/* TabelaPedidos.module.css */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  /* IMPORTANTE: Removido qualquer background-color aqui, a tabela herda do pai (pedidosCard) */
+  /* Isso garante que o fundo da tabela e do card sejam idênticos */
+}
+
+.table thead {
+  /* Fundo do cabeçalho IGUAL ao do card, para não haver distinção */
+  background-color: #0d0d0d; /* Usar o mesmo background-color do .pedidosCard */
+  color: #cccccc; /* Cor do texto do cabeçalho */
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  /* Linhas de separação EXTREMAMENTE sutis, quase invisíveis */
+  border-bottom: 1px solid #181818; /* Cor mais escura, quase imperceptível */
+  font-size: 0.95rem;
+  color: #e0e0e0; /* Cor do texto do corpo da tabela, para um contraste suave */
+}
+
+/* Remove a borda inferior da última linha para um visual mais limpo */
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.table tr:hover {
+  background-color: #1f1f1f; /* Fundo levemente mais claro ao passar o mouse */
+}
+
+.numeroIndicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ff9100; /* Laranja para o indicador */
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.entregando {
+  background-color: #00b87c;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.preparando {
+  background-color: #b88d00;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.cancelado {
+  background-color: #a83333;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}

@@ -1,47 +1,50 @@
-const express = require('express');
+// routes/authRoutes.js
+const express = require("express");
 const router = express.Router();
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const User = require('../models/User');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
+const JWT_SECRET = process.env.JWT_SECRET || "secreta123"; // depois coloque no .env
 
-router.post('/login', async (req, res) => {
-  const { email, senha } = req.body;
+// Registro
+router.post("/register", async (req, res) => {
+  const { nome, email, senha } = req.body;
 
   try {
-    
-    const usuario = await User.findOne({ email });
-    if (!usuario) {
-      return res.status(400).json({ mensagem: 'Email ou senha inválidos.' });
-    }
+    const existente = await User.findOne({ email });
+    if (existente) return res.status(400).json({ mensagem: "Email já cadastrado." });
 
-  
-    const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
-    if (!senhaCorreta) {
-      return res.status(400).json({ mensagem: 'Email ou senha inválidos.' });
-    }
+    const senhaCriptografada = await bcrypt.hash(senha, 10);
 
-    
-    const token = jwt.sign(
-      { id: usuario._id, email: usuario.email },
-      process.env.JWT_SECRET,
-      { expiresIn: '2h' }
-    );
+    const novoUsuario = new User({ nome, email, senha: senhaCriptografada });
+    await novoUsuario.save();
 
-    res.json({ mensagem: 'Login realizado com sucesso!', token });
-
-  } catch (error) {
-    console.error('Erro no login:', error);
-    res.status(500).json({ mensagem: 'Erro interno no servidor.' });
+    res.status(201).json({ mensagem: "Usuário registrado com sucesso!" });
+  } catch (err) {
+    res.status(500).json({ mensagem: "Erro ao registrar", erro: err.message });
   }
 });
 
-const autenticarToken = require('../middlewares/authMiddleware');
+// Login
+router.post("/login", async (req, res) => {
+  const { email, senha } = req.body;
 
-router.get('/perfil', autenticarToken, (req, res) => {
-  res.json({ mensagem: 'Você acessou um perfil protegido!', usuario: req.usuario });
+  try {
+    const usuario = await User.findOne({ email });
+    if (!usuario) return res.status(404).json({ mensagem: "Usuário não encontrado." });
+
+    const senhaValida = await bcrypt.compare(senha, usuario.senha);
+    if (!senhaValida) return res.status(401).json({ mensagem: "Senha incorreta." });
+
+    const token = jwt.sign({ id: usuario._id, tipo: usuario.tipo }, JWT_SECRET, {
+      expiresIn: "3h",
+    });
+
+    res.json({ token, usuario: { nome: usuario.nome, tipo: usuario.tipo } });
+  } catch (err) {
+    res.status(500).json({ mensagem: "Erro no login", erro: err.message });
+  }
 });
-
-
 
 module.exports = router;
