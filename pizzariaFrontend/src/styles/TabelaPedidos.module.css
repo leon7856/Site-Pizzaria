@@ -1,43 +1,38 @@
-/* TabelaPedidos.module.css */
-
 .table {
   width: 100%;
   border-collapse: collapse;
-  /* IMPORTANTE: Removido qualquer background-color aqui, a tabela herda do pai (pedidosCard) */
-  /* Isso garante que o fundo da tabela e do card sejam idênticos */
 }
 
 .table thead {
-  /* Fundo do cabeçalho IGUAL ao do card, para não haver distinção */
-  background-color: #0d0d0d; /* Usar o mesmo background-color do .pedidosCard */
-  color: #cccccc; /* Cor do texto do cabeçalho */
+  
+  background-color: #0d0d0d; 
+  color: #cccccc; 
 }
 
 .table th,
 .table td {
   padding: 1rem;
   text-align: left;
-  /* Linhas de separação EXTREMAMENTE sutis, quase invisíveis */
-  border-bottom: 1px solid #181818; /* Cor mais escura, quase imperceptível */
+  border-bottom: 1px solid #181818;
   font-size: 0.95rem;
-  color: #e0e0e0; /* Cor do texto do corpo da tabela, para um contraste suave */
+  color: #e0e0e0; 
 }
 
-/* Remove a borda inferior da última linha para um visual mais limpo */
+
 .table tbody tr:last-child td {
   border-bottom: none;
 }
 
 
 .table tr:hover {
-  background-color: #1f1f1f; /* Fundo levemente mais claro ao passar o mouse */
+  background-color: #1f1f1f; 
 }
 
 .numeroIndicator {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: #ff9100; /* Laranja para o indicador */
+  background-color: #ff9100; 
   margin-right: 8px;
   vertical-align: middle;
   border-radius: 2px;

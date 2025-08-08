@@ -7,9 +7,9 @@ function Dashboard() {
     <div className={styles.dashboardContainer}>
       <Sidebar />
       <main className={styles.mainContent}>
-        <h1>Gestão de Pedidos</h1> {/* Título principal */}
+        <h1>Gestão de Pedidos</h1> {}
 
-        {/* Novo contêiner para a tabela de pedidos */}
+        {}
         <div className={styles.pedidosCard}>
           <TabelaPedidos />
         </div>

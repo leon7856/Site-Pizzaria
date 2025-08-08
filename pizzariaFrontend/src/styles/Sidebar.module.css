@@ -13,8 +13,8 @@
   margin-bottom: 2rem;
   color: white;
   display: flex;
-  flex-direction: column; /* Para "PIZZARIA" ficar abaixo */
-  align-items: flex-start; /* Alinhar o texto à esquerda */
+  flex-direction: column; 
+  align-items: flex-start; 
 }
 
 .logo span {
@@ -22,9 +22,9 @@
 }
 
 .logoPizzeria {
-  font-size: 0.8rem; /* Tamanho menor para "PIZZARIA" */
-  opacity: 0.7; /* Mais transparente */
-  margin-top: 5px; /* Espaçamento do texto principal */
+  font-size: 0.8rem; 
+  opacity: 0.7; 
+  margin-top: 5px; 
 }
 
 nav ul {
@@ -35,7 +35,7 @@ nav ul {
 .menuItem {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Para empurrar a seta para a direita */
+  justify-content: space-between; 
   gap: 10px;
   padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
@@ -49,11 +49,8 @@ nav ul {
   background-color: #1f1f1f;
 }
 
-/* Estilo para o item ativo/selecionado (ex: Dashboard) */
 .menuItem.active {
-  background-color: #1f1f1f; /* Cor de fundo mais clara */
-  /* Você pode adicionar outras propriedades, como border-left para uma barra */
-  /* border-left: 3px solid #ff3c00; */
+  background-color: #1f1f1f; 
 }
 
 
@@ -65,14 +62,14 @@ nav ul {
 
 .menuArrow {
   font-size: 0.8rem;
-  color: #999; /* Cor cinza para as setas */
+  color: #999; 
 }
 
-/* Estilo para a linha de separação */
+
 .separator {
   height: 1px;
-  background-color: #333; /* Cor da linha */
-  margin: 1rem 0; /* Espaçamento acima e abaixo */
-  list-style: none; /* Remover marcadores de lista */
-  padding: 0; /* Remover padding */
+  background-color: #333;
+  margin: 1rem 0;
+  list-style: none; 
+  padding: 0; 
 }

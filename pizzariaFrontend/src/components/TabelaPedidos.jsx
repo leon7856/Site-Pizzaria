@@ -8,7 +8,6 @@ const pedidos = [
   { numero: "#154", cliente: "Marcio Ivam", pedido: "Portuguesa", endereco: "Rua particular Vila Augusta", status: "Entregando", valor: "R$ 120,00" },
   { numero: "#154", cliente: "Marcio Ivam", pedido: "Portuguesa", endereco: "Rua particular Vila Augusta", status: "Cancelado", valor: "R$ 120,00" },
   { numero: "#154", cliente: "Marcio Ivam", pedido: "Portuguesa", endereco: "Rua particular Vila Augusta", status: "Preparando", valor: "R$ 120,00" },
-  // Os dados da tabela podem ser mais ou menos, isso não afeta o visual geral do layout
 ];
 
 function getStatusClass(status) {
